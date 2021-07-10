@@ -1,13 +1,29 @@
 <html>
   <head>
-    <title>Express</title>
+    <title>Timeline</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 
     <script src="index.js" type="module"></script>
+
+    <style>
+      .context-menu {
+        position: absolute;
+        background-color: white;
+        border: thin solid blue;
+        border-radius: 2rem;
+        padding: 1rem;
+      }
+      .context-menu ul {
+        padding: 0;
+      }
+      .context-menu li {
+        list-style-type: none;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Your Timeline</h1>
+    <h1>Timeline(s)</h1>
     <br/>
     <form id="add_event">
       <label>
@@ -19,9 +35,22 @@
         Due:&nbsp;
         <input id="event_due" name="completion" type="date" />
       </label>
+      <br/>
       <button>Create Event</button>
     </form>
     <br/>
     <div id="timeline"></div>
+
+    <div id="context_menu" class="context-menu" style="display: none">
+      <ul>
+          <li><a href="#">Element-1</a></li>
+          <li><a href="#">Element-2</a></li>
+          <li><a href="#">Element-3</a></li>
+          <li><a href="#">Element-4</a></li>
+          <li><a href="#">Element-5</a></li>
+          <li><a href="#">Element-6</a></li>
+          <li><a href="#">Element-7</a></li>
+      </ul>
+    </div>
   </body>
 </html>

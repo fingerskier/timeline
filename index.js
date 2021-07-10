@@ -3,43 +3,7 @@ import Timeline from "./lib/Timeline.js";
 
 const timeline = new Timeline()
 
-
-function timeline_event(wrappers, ...events) {
-  let result = ''
-
-  for (let I in events) {
-    const event = events[I]
-    const wrapper = wrappers[I]
-
-    result += `<${wrapper}>
-      ${event.due}: ${event.name}
-    </${wrapper}>`
-  }
-
-  return result
-}
-
-
-function render_timeline() {
-  const container = document.getElementById('timeline')
-
-  let content = '<ul>'
-
-  const T = context.timeline
-  T.sort((a,b)=>{
-    if (a.due > b.due) return 1
-    if (a.due < b.due) return -1
-    return 0
-  })
-
-  for (const event of T) {
-    content += timeline_event`li${event}`
-  }
-
-  content += '</ul>'
-
-  container.innerHTML = content
-}
+let menu
 
 
 function addEvent(E) {
@@ -52,7 +16,23 @@ function addEvent(E) {
 
   timeline.add(event)
 
-  render_timeline()
+  return false
+}
+
+
+function hide_menu() {
+  menu.style.display = 'none';
+}
+
+
+function right_click(event) {
+  event.preventDefault()
+
+  console.log(event)
+  
+  menu.style.display = 'block';
+  menu.style.left = event.pageX + "px";
+  menu.style.top = event.pageY + "px";
 
   return false
 }
@@ -60,6 +40,12 @@ function addEvent(E) {
 
 function main(event) {
   const add_event_form = document.getElementById('add_event')
+  
+  menu = document.getElementById('context_menu')
+
+  document.addEventListener('contextmenu', right_click)
+  document.addEventListener('click', hide_menu)
+  document.addEventListener('keydown', hide_menu)
 
   _default('timeline', [])
 
