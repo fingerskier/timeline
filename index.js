@@ -1,4 +1,7 @@
 import { context, _default } from "./lib/context.js";
+import Timeline from "./lib/Timeline.js";
+
+const timeline = new Timeline()
 
 
 function timeline_event(wrappers, ...events) {
@@ -8,7 +11,9 @@ function timeline_event(wrappers, ...events) {
     const event = events[I]
     const wrapper = wrappers[I]
 
-    result += `<${wrapper}>${event.due}: ${event.name}</${wrapper}>`
+    result += `<${wrapper}>
+      ${event.due}: ${event.name}
+    </${wrapper}>`
   }
 
   return result
@@ -20,7 +25,14 @@ function render_timeline() {
 
   let content = '<ul>'
 
-  for (const event of context.timeline) {
+  const T = context.timeline
+  T.sort((a,b)=>{
+    if (a.due > b.due) return 1
+    if (a.due < b.due) return -1
+    return 0
+  })
+
+  for (const event of T) {
     content += timeline_event`li${event}`
   }
 
@@ -38,10 +50,9 @@ function addEvent(E) {
     due: document.getElementById('event_due').value,
   }
 
-  const T = context.timeline
-  T.push(event)
-  context.timeline = T
-  console.log(T)
+  timeline.add(event)
+
+  render_timeline()
 
   return false
 }
@@ -54,7 +65,7 @@ function main(event) {
 
   add_event_form.addEventListener('submit', addEvent)
 
-  render_timeline()
+  timeline.render('timeline')
 }
 
 
