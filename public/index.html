@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <script src="index.js" type="module"></script>
+  </head>
+
+  <body>
+    <h1>Your Timeline</h1>
+    <br/>
+    <form id="add_event">
+      <label>
+        Name:&nbsp;
+        <input id="event_name" name="name" />
+      </label>
+      <br/>
+      <label>
+        Due:&nbsp;
+        <input id="event_due" name="completion" type="date" />
+      </label>
+      <button>Create Event</button>
+    </form>
+    <br/>
+    <div id="timeline"></div>
+  </body>
+</html>
