@@ -1,56 +1,12 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>Timeline</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-
-    <script src="index.js" type="module"></script>
-
-    <style>
-      .context-menu {
-        position: absolute;
-        background-color: white;
-        border: thin solid blue;
-        border-radius: 2rem;
-        padding: 1rem;
-      }
-      .context-menu ul {
-        padding: 0;
-      }
-      .context-menu li {
-        list-style-type: none;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historical Timeline</title>
   </head>
-
   <body>
-    <h1>Timeline(s)</h1>
-    <br/>
-    <form id="add_event">
-      <label>
-        Name:&nbsp;
-        <input id="event_name" name="name" />
-      </label>
-      <br/>
-      <label>
-        Due:&nbsp;
-        <input id="event_due" name="completion" type="date" />
-      </label>
-      <br/>
-      <button>Create Event</button>
-    </form>
-    <br/>
-    <div id="timeline"></div>
-
-    <div id="context_menu" class="context-menu" style="display: none">
-      <ul>
-          <li><a href="#">Element-1</a></li>
-          <li><a href="#">Element-2</a></li>
-          <li><a href="#">Element-3</a></li>
-          <li><a href="#">Element-4</a></li>
-          <li><a href="#">Element-5</a></li>
-          <li><a href="#">Element-6</a></li>
-          <li><a href="#">Element-7</a></li>
-      </ul>
-    </div>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

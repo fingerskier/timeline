@@ -1,0 +1,16 @@
+[
+  {
+    "year": 1776,
+    "title": "U.S. Declaration of Independence",
+    "description": "The Thirteen Colonies declare independence from Great Britain.",
+    "era": "Modern",
+    "location": "Philadelphia"
+  },
+  {
+    "year": 1969,
+    "title": "Apollo 11 Moon Landing",
+    "description": "Humans land on the Moon for the first time during NASA's Apollo 11 mission.",
+    "era": "Modern",
+    "location": "Moon"
+  }
+]

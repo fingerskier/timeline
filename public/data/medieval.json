@@ -1,0 +1,16 @@
+[
+  {
+    "year": 1066,
+    "title": "Norman Conquest of England",
+    "description": "William the Conqueror defeats Harold II at the Battle of Hastings.",
+    "era": "Medieval",
+    "location": "England"
+  },
+  {
+    "year": 1215,
+    "title": "Magna Carta Sealed",
+    "description": "King John agrees to the Magna Carta, influencing constitutional principles.",
+    "era": "Medieval",
+    "location": "England"
+  }
+]
