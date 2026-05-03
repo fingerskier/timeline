@@ -40,3 +40,8 @@ Each file should export an array of objects with this shape:
 
 `vite.config.js` uses `base: '/timeline/'`, which matches a repository named `timeline`.
 If your repo name differs, update the `base` value accordingly.
+
+## GitHub Pages deployment
+
+This project is built with Vite and must be deployed from the generated `dist/` output (not the repository root source files).
+A GitHub Actions workflow is included at `.github/workflows/deploy.yml` to build and publish to the `gh-pages` branch on every push to `main`.
