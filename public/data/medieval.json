@@ -1,4 +1,5 @@
 [
+  { "year": 570, "endYear": 632, "title": "Muhammad", "description": "Prophet of Islam.", "era": "Medieval", "location": "Arabian Peninsula" },
   { "year": 622, "title": "Hijra", "description": "Muhammad migrates from Mecca to Medina; Islamic calendar begins.", "era": "Medieval", "location": "Arabian Peninsula" },
   { "year": 632, "title": "Death of Muhammad", "description": "Founding figure of Islam dies; Rashidun Caliphate begins.", "era": "Medieval", "location": "Medina" },
   { "year": 800, "title": "Charlemagne crowned emperor", "description": "First Holy Roman Emperor crowned by Pope Leo III.", "era": "Medieval", "location": "Rome" },
@@ -7,6 +8,8 @@
   { "year": 1066, "title": "Battle of Hastings", "description": "William of Normandy conquers England.", "era": "Medieval", "location": "Hastings" },
   { "year": 1095, "title": "First Crusade declared", "description": "Pope Urban II calls for the recovery of the Holy Land.", "era": "Medieval", "location": "Clermont" },
   { "year": 1206, "title": "Genghis Khan unifies the Mongols", "description": "Foundation of the Mongol Empire.", "era": "Medieval", "location": "Mongolia" },
+  { "year": 1206, "endYear": 1368, "title": "Mongol Empire", "description": "Largest contiguous land empire in history.", "era": "Medieval", "location": "Eurasia" },
+  { "year": 1337, "endYear": 1453, "title": "Hundred Years' War", "description": "Series of conflicts between England and France.", "era": "Medieval", "location": "France" },
   { "year": 1215, "title": "Magna Carta sealed", "description": "King John seals charter limiting royal power.", "era": "Medieval", "location": "Runnymede" },
   { "year": 1271, "title": "Marco Polo departs for the East", "description": "Polo begins his journey to the court of Kublai Khan.", "era": "Medieval", "location": "Venice" },
   { "year": 1298, "title": "Aztec capital founded", "description": "Tenochtitlan founded on Lake Texcoco (traditional date 1325 also cited).", "era": "Medieval", "location": "Valley of Mexico" },

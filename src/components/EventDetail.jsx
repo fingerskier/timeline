@@ -23,7 +23,10 @@ export default function EventDetail({ event, onClose }) {
     >
       <div className="detail" onClick={(e) => e.stopPropagation()}>
         <div className="meta">
-          {fmtYear(event.year)} · {event.era} · {event.location}
+          {typeof event.endYear === 'number' && event.endYear > event.year
+            ? `${fmtYear(event.year)}–${fmtYear(event.endYear)}`
+            : fmtYear(event.year)}
+          {' · '}{event.era}{event.location ? ` · ${event.location}` : ''}
         </div>
         <h2>{event.title}</h2>
         <p>{event.description}</p>

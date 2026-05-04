@@ -131,6 +131,29 @@ body {
 .event-dot { fill: #fff; filter: drop-shadow(0 0 4px rgba(127,168,224,.8)); }
 .event-dot.matched { fill: var(--accent); filter: drop-shadow(0 0 8px var(--accent)); }
 
+.event-span rect {
+  fill: rgba(127,168,224,.35);
+  stroke: rgba(127,168,224,.85);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px rgba(127,168,224,.45));
+}
+.event-span.span-prehistoric rect { fill: color-mix(in srgb, var(--epoch-prehistoric) 45%, transparent); stroke: var(--epoch-prehistoric); }
+.event-span.span-ancient rect      { fill: color-mix(in srgb, var(--epoch-ancient) 45%, transparent); stroke: var(--epoch-ancient); }
+.event-span.span-medieval rect     { fill: color-mix(in srgb, var(--epoch-medieval) 45%, transparent); stroke: var(--epoch-medieval); }
+.event-span.span-modern rect       { fill: color-mix(in srgb, var(--epoch-modern) 45%, transparent); stroke: var(--epoch-modern); }
+.event-span.matched rect {
+  fill: color-mix(in srgb, var(--accent) 50%, transparent);
+  stroke: var(--accent);
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+.event-span:hover rect { fill-opacity: .8; }
+.span-label {
+  fill: var(--ink);
+  font-size: 11px;
+  letter-spacing: .04em;
+  pointer-events: none;
+}
+
 .event-chip {
   background: rgba(127,168,224,.12);
   border: 1px solid rgba(127,168,224,.4);

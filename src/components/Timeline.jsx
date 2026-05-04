@@ -5,6 +5,7 @@ import { makeYearScale, visibleYearRange, centerYear } from '../lib/yearScale.js
 import { lodBand } from '../lib/zoom.js'
 import AxisRibbon from './AxisRibbon.jsx'
 import EventNode from './EventNode.jsx'
+import EventSpan from './EventSpan.jsx'
 import Starfield from './Starfield.jsx'
 import Breadcrumbs from './Breadcrumbs.jsx'
 import ZoomControls from './ZoomControls.jsx'
@@ -25,7 +26,11 @@ export default function Timeline({ events }) {
   const domain = useMemo(() => {
     if (!events.length) return [-3000, 2000]
     const lo = Math.max(events[0].year, -12000)
-    return [lo, events[events.length - 1].year]
+    let hi = events[events.length - 1].year
+    for (const e of events) {
+      if (typeof e.endYear === 'number' && e.endYear > hi) hi = e.endYear
+    }
+    return [lo, hi]
   }, [events])
 
   const scale = useMemo(
@@ -67,9 +72,17 @@ export default function Timeline({ events }) {
   const [visA, visB] = visibleYearRange(scale, transform, size.w)
   const cy = centerYear(scale, transform, size.w)
 
-  const visibleEvents = useMemo(() => {
-    return events.filter((e) => e.year >= visA && e.year <= visB)
-  }, [events, visA, visB])
+  const isSpan = (e) => typeof e.endYear === 'number' && e.endYear > e.year
+
+  const visiblePoints = useMemo(
+    () => events.filter((e) => !isSpan(e) && e.year >= visA && e.year <= visB),
+    [events, visA, visB],
+  )
+
+  const visibleSpans = useMemo(
+    () => events.filter((e) => isSpan(e) && e.endYear >= visA && e.year <= visB),
+    [events, visA, visB],
+  )
 
   const matchSet = useMemo(() => {
     if (!query.trim()) return null
@@ -156,7 +169,17 @@ export default function Timeline({ events }) {
               height={VIEW_H}
             />
             <g transform={`translate(0, ${VIEW_H / 2})`}>
-              {visibleEvents.map((e) => (
+              {visibleSpans.map((e) => (
+                <EventSpan
+                  key={`span-${e.year}-${e.endYear}-${e.title}`}
+                  event={e}
+                  x1={scale(e.year) * transform.k}
+                  x2={scale(e.endYear) * transform.k}
+                  matched={matchSet?.has(`${e.year}|${e.title}`) ?? false}
+                  onClick={setSelected}
+                />
+              ))}
+              {visiblePoints.map((e) => (
                 <EventNode
                   key={`${e.year}-${e.title}`}
                   event={e}
