@@ -1,16 +1,20 @@
 [
-  {
-    "year": -3100,
-    "title": "Early Dynastic Period in Egypt",
-    "description": "Unification of Upper and Lower Egypt helps establish one of the earliest centralized states.",
-    "era": "Ancient",
-    "location": "Nile Valley"
-  },
-  {
-    "year": -776,
-    "title": "First Recorded Olympic Games",
-    "description": "The first documented ancient Olympic Games are held at Olympia.",
-    "era": "Ancient",
-    "location": "Greece"
-  }
+  { "year": -3100, "title": "Early Dynastic Period in Egypt", "description": "Unification of Upper and Lower Egypt.", "era": "Ancient", "location": "Nile Valley" },
+  { "year": -2560, "title": "Great Pyramid of Giza completed", "description": "Tomb of Pharaoh Khufu, tallest structure for ~3,800 years.", "era": "Ancient", "location": "Giza" },
+  { "year": -1754, "title": "Code of Hammurabi", "description": "One of the earliest preserved law codes.", "era": "Ancient", "location": "Babylon" },
+  { "year": -1200, "title": "Late Bronze Age collapse", "description": "Wave of civilizational collapses across the eastern Mediterranean.", "era": "Ancient", "location": "Eastern Mediterranean" },
+  { "year": -776, "title": "First Recorded Olympic Games", "description": "First documented ancient Olympic Games.", "era": "Ancient", "location": "Olympia" },
+  { "year": -753, "title": "Founding of Rome", "description": "Traditional date of the founding of Rome.", "era": "Ancient", "location": "Rome" },
+  { "year": -509, "title": "Roman Republic established", "description": "Rome transitions from monarchy to republic.", "era": "Ancient", "location": "Rome" },
+  { "year": -490, "title": "Battle of Marathon", "description": "Athenians defeat Persian invasion force.", "era": "Ancient", "location": "Marathon" },
+  { "year": -399, "title": "Trial of Socrates", "description": "Socrates condemned to death; foundational moment for Western philosophy.", "era": "Ancient", "location": "Athens" },
+  { "year": -331, "title": "Alexander defeats Darius III", "description": "Battle of Gaugamela ends the Achaemenid Empire.", "era": "Ancient", "location": "Mesopotamia" },
+  { "year": -221, "title": "Qin unifies China", "description": "Qin Shi Huang founds the first imperial Chinese dynasty.", "era": "Ancient", "location": "China" },
+  { "year": -44, "title": "Assassination of Julius Caesar", "description": "Caesar killed on the Ides of March.", "era": "Ancient", "location": "Rome" },
+  { "year": -27, "title": "Roman Empire begins", "description": "Augustus becomes first Roman emperor.", "era": "Ancient", "location": "Rome" },
+  { "year": 79, "title": "Eruption of Vesuvius", "description": "Pompeii and Herculaneum destroyed.", "era": "Ancient", "location": "Bay of Naples" },
+  { "year": 105, "title": "Paper standardized in Han China", "description": "Cai Lun documents standardized papermaking process.", "era": "Ancient", "location": "China" },
+  { "year": 313, "title": "Edict of Milan", "description": "Christianity tolerated across the Roman Empire.", "era": "Ancient", "location": "Milan" },
+  { "year": 410, "title": "Sack of Rome", "description": "Visigoths under Alaric sack the city of Rome.", "era": "Ancient", "location": "Rome" },
+  { "year": 476, "title": "Fall of the Western Roman Empire", "description": "Romulus Augustulus deposed by Odoacer.", "era": "Ancient", "location": "Ravenna" }
 ]
