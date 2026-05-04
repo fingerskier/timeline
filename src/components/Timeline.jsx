@@ -24,7 +24,8 @@ export default function Timeline({ events }) {
 
   const domain = useMemo(() => {
     if (!events.length) return [-3000, 2000]
-    return [events[0].year, events[events.length - 1].year]
+    const lo = Math.max(events[0].year, -12000)
+    return [lo, events[events.length - 1].year]
   }, [events])
 
   const scale = useMemo(
@@ -55,7 +56,7 @@ export default function Timeline({ events }) {
     zoomRef.current = z
     svg.call(z)
     return () => { svg.on('.zoom', null) }
-  }, [])
+  }, [size.w])
 
   const band = lodBand(transform.k)
   const [visA, visB] = visibleYearRange(scale, transform, size.w)
@@ -142,9 +143,10 @@ export default function Timeline({ events }) {
           preserveAspectRatio="xMidYMid meet"
           style={{ display: 'block' }}
         >
-          <g transform={`translate(${transform.x}, 0) scale(${transform.k}, 1)`}>
+          <g transform={`translate(${transform.x}, 0)`}>
             <AxisRibbon
               scale={scale}
+              k={transform.k}
               band={band}
               visibleYears={[visA, visB]}
               width={VIEW_W}
@@ -152,19 +154,14 @@ export default function Timeline({ events }) {
             />
             <g transform={`translate(0, ${VIEW_H / 2})`}>
               {visibleEvents.map((e) => (
-                <g
+                <EventNode
                   key={`${e.year}-${e.title}`}
-                  transform={`translate(0,0) scale(${1 / transform.k}, 1)`}
-                  style={{ transformOrigin: `${scale(e.year) * transform.k}px 0` }}
-                >
-                  <EventNode
-                    event={e}
-                    mode={nodeMode(e)}
-                    x={scale(e.year) * transform.k}
-                    matched={matchSet?.has(`${e.year}|${e.title}`) ?? false}
-                    onClick={setSelected}
-                  />
-                </g>
+                  event={e}
+                  mode={nodeMode(e)}
+                  x={scale(e.year) * transform.k}
+                  matched={matchSet?.has(`${e.year}|${e.title}`) ?? false}
+                  onClick={setSelected}
+                />
               ))}
             </g>
           </g>

@@ -7,9 +7,11 @@ export default function App() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    let alive = true
     loadAllEvents(import.meta.env.BASE_URL)
-      .then(setEvents)
-      .catch((e) => setError(e.message))
+      .then((d) => { if (alive) setEvents(d) })
+      .catch((e) => { if (alive) setError(e.message) })
+    return () => { alive = false }
   }, [])
 
   if (error) {
@@ -21,6 +23,6 @@ export default function App() {
     )
   }
 
-  if (!events.length) return null
+  if (!events.length) return <div className="banner">Loading timeline…</div>
   return <Timeline events={events} />
 }

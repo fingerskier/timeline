@@ -16,9 +16,10 @@ function fmtYear(y) {
   return y < 0 ? `${-y} BCE` : `${y}`
 }
 
-export default function AxisRibbon({ scale, band, visibleYears, width, height = 600 }) {
+export default function AxisRibbon({ scale, k = 1, band, visibleYears, width, height = 600 }) {
   const idx = BAND_ORDER.indexOf(band)
   const baseY = height / 2
+  const xOf = (y) => scale(y) * k
 
   const epochs = EPOCHS.map((e) => {
     const start = Math.max(e.start, scale.domain()[0])
@@ -32,22 +33,22 @@ export default function AxisRibbon({ scale, band, visibleYears, width, height = 
         <rect
           key={e.name}
           className="epoch-wash"
-          x={scale(e.start)}
+          x={xOf(e.start)}
           y={baseY - 80}
-          width={scale(e.end) - scale(e.start)}
+          width={xOf(e.end) - xOf(e.start)}
           height={160}
           fill={e.color}
           opacity={0.08}
         />
       ))}
 
-      <line x1={0} x2={width} y1={baseY} y2={baseY} stroke="rgba(127,168,224,.25)" />
+      <line x1={0} x2={width * k} y1={baseY} y2={baseY} stroke="rgba(127,168,224,.25)" />
 
       {idx === 0 && epochs.map((e) => (
         <text
           key={`elabel-${e.name}`}
           className="tick-label epoch"
-          x={(scale(e.start) + scale(e.end)) / 2}
+          x={(xOf(e.start) + xOf(e.end)) / 2}
           y={baseY - 90}
           textAnchor="middle"
         >
@@ -57,8 +58,8 @@ export default function AxisRibbon({ scale, band, visibleYears, width, height = 
 
       {idx >= 1 && ticksByStep(visibleYears, 1000).map((y) => (
         <g key={`m-${y}`}>
-          <line x1={scale(y)} x2={scale(y)} y1={baseY - 8} y2={baseY + 8} stroke="rgba(127,168,224,.4)" />
-          <text className="tick-label millennium" x={scale(y)} y={baseY + 24} textAnchor="middle">
+          <line x1={xOf(y)} x2={xOf(y)} y1={baseY - 8} y2={baseY + 8} stroke="rgba(127,168,224,.4)" />
+          <text className="tick-label millennium" x={xOf(y)} y={baseY + 24} textAnchor="middle">
             {fmtYear(y)}
           </text>
         </g>
@@ -66,21 +67,21 @@ export default function AxisRibbon({ scale, band, visibleYears, width, height = 
 
       {idx >= 2 && ticksByStep(visibleYears, 100).map((y) => (
         <g key={`c-${y}`}>
-          <line x1={scale(y)} x2={scale(y)} y1={baseY - 4} y2={baseY + 4} stroke="rgba(127,168,224,.3)" />
-          <text className="tick-label century" x={scale(y)} y={baseY + 38} textAnchor="middle">
+          <line x1={xOf(y)} x2={xOf(y)} y1={baseY - 4} y2={baseY + 4} stroke="rgba(127,168,224,.3)" />
+          <text className="tick-label century" x={xOf(y)} y={baseY + 38} textAnchor="middle">
             {fmtYear(y)}
           </text>
         </g>
       ))}
 
       {idx >= 3 && ticksByStep(visibleYears, 10).map((y) => (
-        <text key={`d-${y}`} className="tick-label decade" x={scale(y)} y={baseY + 52} textAnchor="middle">
+        <text key={`d-${y}`} className="tick-label decade" x={xOf(y)} y={baseY + 52} textAnchor="middle">
           {fmtYear(y)}
         </text>
       ))}
 
       {idx >= 4 && ticksByStep(visibleYears, 1).map((y) => (
-        <text key={`y-${y}`} className="tick-label year" x={scale(y)} y={baseY + 66} textAnchor="middle">
+        <text key={`y-${y}`} className="tick-label year" x={xOf(y)} y={baseY + 66} textAnchor="middle">
           {fmtYear(y)}
         </text>
       ))}
