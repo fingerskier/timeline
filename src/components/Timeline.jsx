@@ -3,6 +3,7 @@ import { select } from 'd3-selection'
 import { zoom as d3zoom, zoomIdentity } from 'd3-zoom'
 import { makeYearScale, visibleYearRange, centerYear } from '../lib/yearScale.js'
 import { lodBand } from '../lib/zoom.js'
+import { assignLanes } from '../lib/lanes.js'
 import AxisRibbon from './AxisRibbon.jsx'
 import EventNode from './EventNode.jsx'
 import EventSpan from './EventSpan.jsx'
@@ -14,6 +15,9 @@ import EventDetail from './EventDetail.jsx'
 
 const VIEW_W = 5000
 const VIEW_H = 600
+const SPAN_H = 10
+const SPAN_GAP = 4
+const SPAN_COLLAPSE_PX = 6
 
 export default function Timeline({ events }) {
   const svgRef = useRef(null)
@@ -74,15 +78,33 @@ export default function Timeline({ events }) {
 
   const isSpan = (e) => typeof e.endYear === 'number' && e.endYear > e.year
 
+  const lanedSpans = useMemo(
+    () => assignLanes(events.filter(isSpan)),
+    [events],
+  )
+
+  const pointEvents = useMemo(() => events.filter((e) => !isSpan(e)), [events])
+
   const visiblePoints = useMemo(
-    () => events.filter((e) => !isSpan(e) && e.year >= visA && e.year <= visB),
-    [events, visA, visB],
+    () => pointEvents.filter((e) => e.year >= visA && e.year <= visB),
+    [pointEvents, visA, visB],
   )
 
   const visibleSpans = useMemo(
-    () => events.filter((e) => isSpan(e) && e.endYear >= visA && e.year <= visB),
-    [events, visA, visB],
+    () => lanedSpans.filter((e) => e.endYear >= visA && e.year <= visB),
+    [lanedSpans, visA, visB],
   )
+
+  const [collapsedSpans, renderedSpans] = useMemo(() => {
+    const collapsed = []
+    const rendered = []
+    for (const e of visibleSpans) {
+      const px = (scale(e.endYear) - scale(e.year)) * transform.k
+      if (px < SPAN_COLLAPSE_PX) collapsed.push(e)
+      else rendered.push(e)
+    }
+    return [collapsed, rendered]
+  }, [visibleSpans, scale, transform.k])
 
   const matchSet = useMemo(() => {
     if (!query.trim()) return null
@@ -169,12 +191,24 @@ export default function Timeline({ events }) {
               height={VIEW_H}
             />
             <g transform={`translate(0, ${VIEW_H / 2})`}>
-              {visibleSpans.map((e) => (
+              {renderedSpans.map((e) => (
                 <EventSpan
                   key={`span-${e.year}-${e.endYear}-${e.title}`}
                   event={e}
                   x1={scale(e.year) * transform.k}
                   x2={scale(e.endYear) * transform.k}
+                  y={-(SPAN_GAP + e.lane * (SPAN_H + SPAN_GAP)) - SPAN_H / 2}
+                  height={SPAN_H}
+                  matched={matchSet?.has(`${e.year}|${e.title}`) ?? false}
+                  onClick={setSelected}
+                />
+              ))}
+              {collapsedSpans.map((e) => (
+                <EventNode
+                  key={`span-dot-${e.endYear}-${e.title}`}
+                  event={e}
+                  mode="dot"
+                  x={scale((e.year + e.endYear) / 2) * transform.k}
                   matched={matchSet?.has(`${e.year}|${e.title}`) ?? false}
                   onClick={setSelected}
                 />
