@@ -34,14 +34,19 @@ export default function Timeline({ events }) {
   )
 
   useEffect(() => {
-    function onResize() {
-      const el = svgRef.current?.parentElement
-      if (!el) return
+    const el = svgRef.current?.parentElement
+    if (!el) return
+    function measure() {
       setSize({ w: el.clientWidth, h: el.clientHeight })
     }
-    onResize()
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
+    measure()
+    const ro = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(measure) : null
+    ro?.observe(el)
+    window.addEventListener('resize', measure)
+    return () => {
+      ro?.disconnect()
+      window.removeEventListener('resize', measure)
+    }
   }, [])
 
   useEffect(() => {
@@ -138,10 +143,8 @@ export default function Timeline({ events }) {
         <svg
           ref={svgRef}
           viewBox={`0 0 ${size.w} ${size.h}`}
-          width={size.w}
-          height={size.h}
           preserveAspectRatio="xMidYMid meet"
-          style={{ display: 'block' }}
+          style={{ display: 'block', width: '100%', height: '100%' }}
         >
           <g transform={`translate(${transform.x}, 0)`}>
             <AxisRibbon
