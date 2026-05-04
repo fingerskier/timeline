@@ -40,5 +40,44 @@
     "description": "Wheeled vehicles attested in Mesopotamia and Eastern Europe.",
     "era": "Prehistoric",
     "location": "Mesopotamia"
+  },
+  {
+    "year": -4004,
+    "title": "Creation (Ussher)",
+    "description": "Bishop James Ussher's chronology dates the creation week to 4004 BC. Genesis 1–2.",
+    "era": "Prehistoric",
+    "location": "Eden"
+  },
+  {
+    "year": -4004,
+    "endYear": -3074,
+    "title": "Adam",
+    "description": "First man (Genesis 5:5). Lived 930 years per the Masoretic genealogy; dates per Ussher.",
+    "era": "Prehistoric",
+    "location": "Eden / Mesopotamia"
+  },
+  {
+    "year": -3874,
+    "endYear": -2962,
+    "title": "Seth",
+    "description": "Third son of Adam (Genesis 5:6–8); 912-year lifespan.",
+    "era": "Prehistoric",
+    "location": "Mesopotamia"
+  },
+  {
+    "year": -3317,
+    "endYear": -2348,
+    "title": "Methuselah",
+    "description": "Longest-lived patriarch (Genesis 5:27); died in the year of the Flood per Ussher.",
+    "era": "Prehistoric",
+    "location": "Mesopotamia"
+  },
+  {
+    "year": -3382,
+    "endYear": -3017,
+    "title": "Enoch",
+    "description": "Walked with God and was taken (Genesis 5:24); did not see death.",
+    "era": "Prehistoric",
+    "location": "Mesopotamia"
   }
 ]
