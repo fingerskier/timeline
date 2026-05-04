@@ -1,16 +1,19 @@
 [
-  {
-    "year": 1066,
-    "title": "Norman Conquest of England",
-    "description": "William the Conqueror defeats Harold II at the Battle of Hastings.",
-    "era": "Medieval",
-    "location": "England"
-  },
-  {
-    "year": 1215,
-    "title": "Magna Carta Sealed",
-    "description": "King John agrees to the Magna Carta, influencing constitutional principles.",
-    "era": "Medieval",
-    "location": "England"
-  }
+  { "year": 622, "title": "Hijra", "description": "Muhammad migrates from Mecca to Medina; Islamic calendar begins.", "era": "Medieval", "location": "Arabian Peninsula" },
+  { "year": 632, "title": "Death of Muhammad", "description": "Founding figure of Islam dies; Rashidun Caliphate begins.", "era": "Medieval", "location": "Medina" },
+  { "year": 800, "title": "Charlemagne crowned emperor", "description": "First Holy Roman Emperor crowned by Pope Leo III.", "era": "Medieval", "location": "Rome" },
+  { "year": 868, "title": "Diamond Sutra printed", "description": "Earliest dated printed book.", "era": "Medieval", "location": "Tang China" },
+  { "year": 1054, "title": "East-West Schism", "description": "Mutual excommunications split Eastern and Western Christianity.", "era": "Medieval", "location": "Constantinople / Rome" },
+  { "year": 1066, "title": "Battle of Hastings", "description": "William of Normandy conquers England.", "era": "Medieval", "location": "Hastings" },
+  { "year": 1095, "title": "First Crusade declared", "description": "Pope Urban II calls for the recovery of the Holy Land.", "era": "Medieval", "location": "Clermont" },
+  { "year": 1206, "title": "Genghis Khan unifies the Mongols", "description": "Foundation of the Mongol Empire.", "era": "Medieval", "location": "Mongolia" },
+  { "year": 1215, "title": "Magna Carta sealed", "description": "King John seals charter limiting royal power.", "era": "Medieval", "location": "Runnymede" },
+  { "year": 1271, "title": "Marco Polo departs for the East", "description": "Polo begins his journey to the court of Kublai Khan.", "era": "Medieval", "location": "Venice" },
+  { "year": 1298, "title": "Aztec capital founded", "description": "Tenochtitlan founded on Lake Texcoco (traditional date 1325 also cited).", "era": "Medieval", "location": "Valley of Mexico" },
+  { "year": 1347, "title": "Black Death reaches Europe", "description": "Plague pandemic kills a third of Europe over the next 4 years.", "era": "Medieval", "location": "Mediterranean" },
+  { "year": 1381, "title": "Peasants' Revolt", "description": "Major uprising against serfdom in England.", "era": "Medieval", "location": "England" },
+  { "year": 1431, "title": "Joan of Arc executed", "description": "Joan burned at the stake at age 19.", "era": "Medieval", "location": "Rouen" },
+  { "year": 1440, "title": "Gutenberg's printing press", "description": "Movable-type printing demonstrated in Europe.", "era": "Medieval", "location": "Mainz" },
+  { "year": 1453, "title": "Fall of Constantinople", "description": "Ottoman conquest ends the Byzantine Empire.", "era": "Medieval", "location": "Constantinople" },
+  { "year": 1492, "title": "Columbus reaches the Americas", "description": "European contact with the Americas begins.", "era": "Medieval", "location": "Caribbean" }
 ]

@@ -1,0 +1,44 @@
+[
+  {
+    "year": -65000000,
+    "title": "End-Cretaceous extinction",
+    "description": "Asteroid impact wipes out non-avian dinosaurs.",
+    "era": "Prehistoric",
+    "location": "Yucatán Peninsula"
+  },
+  {
+    "year": -300000,
+    "title": "Early Homo sapiens",
+    "description": "Earliest fossil evidence of anatomically modern humans.",
+    "era": "Prehistoric",
+    "location": "Jebel Irhoud, Morocco"
+  },
+  {
+    "year": -40000,
+    "title": "Cave art at Chauvet",
+    "description": "Some of the earliest known figurative cave paintings.",
+    "era": "Prehistoric",
+    "location": "Ardèche, France"
+  },
+  {
+    "year": -10000,
+    "title": "Neolithic Revolution begins",
+    "description": "Transition from hunter-gatherer to settled agriculture.",
+    "era": "Prehistoric",
+    "location": "Fertile Crescent"
+  },
+  {
+    "year": -9500,
+    "title": "Göbekli Tepe constructed",
+    "description": "Earliest known monumental religious complex.",
+    "era": "Prehistoric",
+    "location": "Anatolia"
+  },
+  {
+    "year": -3500,
+    "title": "Invention of the wheel",
+    "description": "Wheeled vehicles attested in Mesopotamia and Eastern Europe.",
+    "era": "Prehistoric",
+    "location": "Mesopotamia"
+  }
+]
