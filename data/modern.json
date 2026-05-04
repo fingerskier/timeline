@@ -1,16 +1,22 @@
 [
-  {
-    "year": 1776,
-    "title": "U.S. Declaration of Independence",
-    "description": "The Thirteen Colonies declare independence from Great Britain.",
-    "era": "Modern",
-    "location": "Philadelphia"
-  },
-  {
-    "year": 1969,
-    "title": "Apollo 11 Moon Landing",
-    "description": "Humans land on the Moon for the first time during NASA's Apollo 11 mission.",
-    "era": "Modern",
-    "location": "Moon"
-  }
+  { "year": 1517, "title": "Ninety-five Theses", "description": "Martin Luther sparks the Protestant Reformation.", "era": "Modern", "location": "Wittenberg" },
+  { "year": 1543, "title": "Copernicus publishes heliocentric model", "description": "De revolutionibus orbium coelestium is printed.", "era": "Modern", "location": "Nuremberg" },
+  { "year": 1607, "title": "Jamestown founded", "description": "First permanent English settlement in North America.", "era": "Modern", "location": "Virginia" },
+  { "year": 1687, "title": "Newton's Principia", "description": "Mathematical Principles of Natural Philosophy is published.", "era": "Modern", "location": "London" },
+  { "year": 1776, "title": "U.S. Declaration of Independence", "description": "The Thirteen Colonies declare independence from Great Britain.", "era": "Modern", "location": "Philadelphia" },
+  { "year": 1789, "title": "French Revolution begins", "description": "Storming of the Bastille on July 14.", "era": "Modern", "location": "Paris" },
+  { "year": 1804, "title": "Haiti gains independence", "description": "First independent Black-led republic in the Americas.", "era": "Modern", "location": "Haiti" },
+  { "year": 1859, "title": "On the Origin of Species", "description": "Darwin publishes his theory of evolution by natural selection.", "era": "Modern", "location": "London" },
+  { "year": 1865, "title": "End of the U.S. Civil War", "description": "Confederate surrender at Appomattox; slavery abolished by 13th Amendment.", "era": "Modern", "location": "Virginia" },
+  { "year": 1879, "title": "Edison's incandescent bulb", "description": "First practical long-lasting electric light bulb.", "era": "Modern", "location": "Menlo Park" },
+  { "year": 1903, "title": "Wright brothers' first flight", "description": "First successful powered, controlled airplane flight.", "era": "Modern", "location": "Kitty Hawk" },
+  { "year": 1914, "title": "World War I begins", "description": "Assassination in Sarajevo triggers global war.", "era": "Modern", "location": "Sarajevo" },
+  { "year": 1939, "title": "World War II begins", "description": "Germany invades Poland.", "era": "Modern", "location": "Poland" },
+  { "year": 1945, "title": "Atomic bombings of Hiroshima and Nagasaki", "description": "First use of nuclear weapons in war; Japan surrenders days later.", "era": "Modern", "location": "Japan" },
+  { "year": 1957, "title": "Sputnik launched", "description": "First artificial Earth satellite.", "era": "Modern", "location": "Baikonur" },
+  { "year": 1969, "title": "Apollo 11 Moon Landing", "description": "Humans land on the Moon for the first time.", "era": "Modern", "location": "Moon" },
+  { "year": 1989, "title": "Fall of the Berlin Wall", "description": "Symbolic end of the Cold War divide in Europe.", "era": "Modern", "location": "Berlin" },
+  { "year": 1991, "title": "World Wide Web goes public", "description": "Tim Berners-Lee publishes the first website.", "era": "Modern", "location": "CERN" },
+  { "year": 2007, "title": "iPhone introduced", "description": "Apple launches the smartphone era at scale.", "era": "Modern", "location": "San Francisco" },
+  { "year": 2020, "title": "COVID-19 pandemic", "description": "WHO declares a global pandemic.", "era": "Modern", "location": "Worldwide" }
 ]
